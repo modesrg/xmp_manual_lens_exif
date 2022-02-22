@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lenxif", "Lenxif\Lenxif.csproj", "{2C185772-A872-4328-9831-A2126CBBFB7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C185772-A872-4328-9831-A2126CBBFB7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C185772-A872-4328-9831-A2126CBBFB7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C185772-A872-4328-9831-A2126CBBFB7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C185772-A872-4328-9831-A2126CBBFB7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E458399A-8A41-4DFD-8EAE-FCF24841F1AE}
+	EndGlobalSection
+EndGlobal

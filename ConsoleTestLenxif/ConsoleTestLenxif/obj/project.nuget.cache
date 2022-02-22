@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "rUyHz+v24vsPztqbJMC0egjyJoFTB9w3P//IQL0N4c+KOCX5wlNnFkUiINylnu6kpaffH/HGBrqnFNMCj63D0A==",
+  "success": true,
+  "projectFilePath": "F:\\Proyectos Personales Visual Studio\\Repo_Lenxif\\xmp_manual_lens_exif\\ConsoleTestLenxif\\ConsoleTestLenxif\\ConsoleTestLenxif.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\modro\\.nuget\\packages\\xmpcore\\6.1.10.1\\xmpcore.6.1.10.1.nupkg.sha512"
+  ],
+  "logs": []
+}
