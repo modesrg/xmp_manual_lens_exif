@@ -24,7 +24,9 @@ namespace MMMLenxif
         private void Form1_Load(object sender, EventArgs e)
         {
             testPath = @"F:\Proyectos Personales Visual Studio\MMMLenxif\testxmp\DSZ_5314 - copia (2).xmp";
-            service.ManualUpdateManualLensInfo(testPath, "15", "2", "Laowa");
+            testPath = @"E:\rawtestxml";
+            testPath = @"F:\RAW Laptop\2022\enero\02";
+            service.UpdateManualLens(testPath);
         }
     }
 }

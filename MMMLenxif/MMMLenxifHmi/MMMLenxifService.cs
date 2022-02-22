@@ -16,6 +16,7 @@ namespace MMMLenxif
         string focalLengthKey = @"exif:FocalLength";
         string fNumberKey = @"exif:FNumber";
         string lensKey = @"aux:Lens";
+        string lensMakeKey = @"exif:LensMake";
         string apertureKey = @"exif:ApertureValue";
         string lensZeroValue = @"0.0 mm f/0.0";
         string tagsKey = @"lr:hierarchicalSubject";
@@ -50,7 +51,7 @@ namespace MMMLenxif
         public void ManualUpdateManualLensInfo(string filePath, string focalLength, string aperture, string brand = null)
         {
             IXmpMeta xmp = ReadXMP(filePath);
-            if (true || HasNoExif(xmp.Properties))
+            if (HasNoExif(xmp.Properties))
             {
                 string newLensMaker = String.Empty;
                 string newFocalLength = String.Empty;
@@ -65,7 +66,7 @@ namespace MMMLenxif
         {
             IXmpMeta xmp = ReadXMP(filePath);
 
-            if (true || HasNoExif(xmp.Properties))
+            if (HasNoExif(xmp.Properties))
             {
                 string newLensMaker = String.Empty;
                 string newFocalLength = String.Empty;
@@ -75,38 +76,41 @@ namespace MMMLenxif
                 //Parse the Aperture (f1.8, F2.8, F22, f4...) and the Focal Length (8mm, 15MM, 1200Mm) from the TAGs.
                 IXmpPropertyInfo etiquetasProperty = xmp.Properties.Where(p => p.Path == tagsKey).FirstOrDefault();
 
-                int tagsNo = xmp.CountArrayItems(etiquetasProperty.Namespace, etiquetasProperty.Path);
-                Dictionary<string, string> lensInfoRelatedTags = new Dictionary<string, string>();
-
-                while (tagsNo > 0)
+                if (etiquetasProperty != null)
                 {
-                    var arrayTag = xmp.GetArrayItem(etiquetasProperty.Namespace, etiquetasProperty.Path, tagsNo);
+                    int tagsNo = xmp.CountArrayItems(etiquetasProperty.Namespace, etiquetasProperty.Path);
+                    Dictionary<string, string> lensInfoRelatedTags = new Dictionary<string, string>();
 
-                    Regex regexFNumber = new Regex(@"([Ff]{1}[0-9]{0,1}[.]{1}[0-9]{1})|([Ff]{1}[0-9]{0,2})");
-                    Regex regexFocalLength = new Regex(@"[0-9]{0,4}[Mm]{2}");
-
-                    if (regexFNumber.IsMatch(arrayTag.Value) && !lensInfoRelatedTags.ContainsKey("FNumber"))
+                    while (tagsNo > 0)
                     {
-                        lensInfoRelatedTags.Add("FNumber", arrayTag.Value); //TODO: This can go
-                        newFNumber = arrayTag.Value;
-                    }
-                    if (regexFocalLength.IsMatch(arrayTag.Value) && !lensInfoRelatedTags.ContainsKey("FocalLength"))
-                    {
-                        lensInfoRelatedTags.Add("FocalLength", arrayTag.Value); //TODO: This can go
-                        newFocalLength = arrayTag.Value;
+                        var arrayTag = xmp.GetArrayItem(etiquetasProperty.Namespace, etiquetasProperty.Path, tagsNo);
+
+                        Regex regexFNumber = new Regex(@"([Ff]{1}[0-9]{0,1}[.]{1}[0-9]{1})|([Ff]{1}[0-9]{0,2})");
+                        Regex regexFocalLength = new Regex(@"[0-9]{0,4}[Mm]{2}");
+
+                        if (regexFNumber.IsMatch(arrayTag.Value) && !lensInfoRelatedTags.ContainsKey("FNumber"))
+                        {
+                            lensInfoRelatedTags.Add("FNumber", arrayTag.Value); //TODO: This can go
+                            newFNumber = arrayTag.Value.ToLower().Replace("f", String.Empty);
+                        }
+                        if (regexFocalLength.IsMatch(arrayTag.Value) && !lensInfoRelatedTags.ContainsKey("FocalLength"))
+                        {
+                            lensInfoRelatedTags.Add("FocalLength", arrayTag.Value); //TODO: This can go
+                            newFocalLength = arrayTag.Value.ToLower().Replace("mm",String.Empty);
+                        }
+
+                        tagsNo--;
                     }
 
-                    tagsNo--;
+                    //TODO: Parse LENS MAKER
+
+                    if (!String.IsNullOrEmpty(newFocalLength) && !String.IsNullOrEmpty(newFNumber))
+                    {
+                        newLensModel = String.Format(@"{0} {1}mm f{2}", newLensMaker, newFocalLength, newFNumber).Trim();
+                        WriteNewExifData(filePath, newFocalLength, newFNumber, newLensModel, xmp);
+                    }
                 }
 
-                //TODO: Parse LENS MAKER
-
-                if (!String.IsNullOrEmpty(newFocalLength) && !String.IsNullOrEmpty(newFNumber))
-                {
-                    newLensModel = String.Format(@"{0} {1}mm f{2}", newLensMaker, newFocalLength, newFNumber).Trim();
-                }
-
-                WriteNewExifData(filePath, newFocalLength, newFNumber, newLensModel, xmp);
             }
         }
 
@@ -119,6 +123,9 @@ namespace MMMLenxif
             IXmpPropertyInfo aperture = xmp.Properties.Where(p => p.Path == apertureKey).FirstOrDefault();
             IXmpPropertyInfo fNumber = xmp.Properties.Where(p => p.Path == fNumberKey).FirstOrDefault();
             IXmpPropertyInfo lensModel = xmp.Properties.Where(p => p.Path == lensKey).FirstOrDefault();
+
+            newFocalLength = (int.Parse(newFocalLength) * 1000000).ToString() + "/" + "1000000";
+            newFNumber = (int.Parse(newFNumber) * 1000000).ToString() + "/" + "1000000";
 
             xmp.SetProperty(focalLength.Namespace, focalLengthKey, newFocalLength);
             xmp.SetProperty(aperture.Namespace, apertureKey, newFNumber);
