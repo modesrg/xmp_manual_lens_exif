@@ -1,0 +1,26 @@
+C:\DATA\Private\PrivateProjVS\MMMLenxif\MMMLenxif\MMMLenxifHmi\bin\Debug\MMMLenxifHmi.exe.config
+C:\DATA\Private\PrivateProjVS\MMMLenxif\MMMLenxif\MMMLenxifHmi\bin\Debug\MMMLenxifHmi.exe
+C:\DATA\Private\PrivateProjVS\MMMLenxif\MMMLenxif\MMMLenxifHmi\bin\Debug\MMMLenxifHmi.pdb
+C:\DATA\Private\PrivateProjVS\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.csproj.AssemblyReference.cache
+C:\DATA\Private\PrivateProjVS\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.Properties.Resources.resources
+C:\DATA\Private\PrivateProjVS\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.csproj.GenerateResource.cache
+C:\DATA\Private\PrivateProjVS\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.csproj.CoreCompileInputs.cache
+C:\DATA\Private\PrivateProjVS\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.exe
+C:\DATA\Private\PrivateProjVS\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.pdb
+C:\DATA\Private\PrivateProjVS\MMMLenxif\MMMLenxif\MMMLenxifHmi\bin\Debug\XmpCore.dll
+C:\DATA\Private\PrivateProjVS\MMMLenxif\MMMLenxif\MMMLenxifHmi\bin\Debug\XmpCore.xml
+C:\DATA\Private\PrivateProjVS\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.Form1.resources
+C:\DATA\Private\PrivateProjVS\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.csproj.CopyComplete
+F:\Proyectos Personales Visual Studio\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.csproj.AssemblyReference.cache
+F:\Proyectos Personales Visual Studio\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.Form1.resources
+F:\Proyectos Personales Visual Studio\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.Properties.Resources.resources
+F:\Proyectos Personales Visual Studio\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.csproj.GenerateResource.cache
+F:\Proyectos Personales Visual Studio\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.csproj.CoreCompileInputs.cache
+F:\Proyectos Personales Visual Studio\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.exe
+F:\Proyectos Personales Visual Studio\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.pdb
+F:\Proyectos Personales Visual Studio\MMMLenxif\MMMLenxif\MMMLenxifHmi\bin\Debug\MMMLenxifHmi.exe.config
+F:\Proyectos Personales Visual Studio\MMMLenxif\MMMLenxif\MMMLenxifHmi\bin\Debug\MMMLenxifHmi.exe
+F:\Proyectos Personales Visual Studio\MMMLenxif\MMMLenxif\MMMLenxifHmi\bin\Debug\MMMLenxifHmi.pdb
+F:\Proyectos Personales Visual Studio\MMMLenxif\MMMLenxif\MMMLenxifHmi\bin\Debug\XmpCore.dll
+F:\Proyectos Personales Visual Studio\MMMLenxif\MMMLenxif\MMMLenxifHmi\bin\Debug\XmpCore.xml
+F:\Proyectos Personales Visual Studio\MMMLenxif\MMMLenxif\MMMLenxifHmi\obj\Debug\MMMLenxifHmi.csproj.CopyComplete
