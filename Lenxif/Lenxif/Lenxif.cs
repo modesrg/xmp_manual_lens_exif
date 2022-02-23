@@ -34,7 +34,7 @@ namespace Lenxif
             }
         }
 
-        public void UpdateManualLens(string path)
+        public void UpdateManualLens(string path, bool autoProcess = true, string focalLength = null, string aperture = null, string brand = null)
         {
             //If its a directory the program will try to update all the XMP files that do not contain exif
             bool isDirectory = File.GetAttributes(path).HasFlag(FileAttributes.Directory);
@@ -45,12 +45,28 @@ namespace Lenxif
 
                 foreach (string xmpPath in xmpFilePaths)
                 {
-                    AutoUpdateManualLensInfo(xmpPath);
+                    switch (autoProcess)
+                    {
+                        case true:
+                            AutoUpdateManualLensInfo(xmpPath);
+                            break;
+                        case false:
+                            ManualUpdateManualLensInfo(xmpPath, focalLength, aperture, brand);
+                            break;
+                    }
                 }
             }
             else if (!isDirectory && Path.GetFileName(path).ToLower().EndsWith("*.xmp"))
             {
-                AutoUpdateManualLensInfo(path);
+                switch (autoProcess)
+                {
+                    case true:
+                        AutoUpdateManualLensInfo(path);
+                        break;
+                    case false:
+                        ManualUpdateManualLensInfo(path, focalLength, aperture, brand);
+                        break;
+                }
             }
 
         }
