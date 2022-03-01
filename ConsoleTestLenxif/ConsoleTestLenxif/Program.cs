@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LenxifCore;
+using System;
 
 namespace ConsoleTestLenxif
 {
@@ -8,9 +9,9 @@ namespace ConsoleTestLenxif
         {
             try
             {
-                Lenxif.Lenxif lenxif = new Lenxif.Lenxif();
+                ILenxif lenxif = new Lenxif();
                 string testPath = @"F:\RAW Laptop\2022\enero\02";
-                lenxif.UpdateManualLens(testPath);
+                //lenxif.UpdateManualLens(testPath);
             }
             catch (Exception ex)
             {

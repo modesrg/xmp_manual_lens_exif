@@ -7,9 +7,9 @@ using XmpCore;
 using XmpCore.Impl;
 using XmpCore.Options;
 
-namespace Lenxif
+namespace LenxifCore
 {
-    public class Lenxif
+    public class Lenxif : ILenxif
     {
         string focalLengthKey = @"exif:FocalLength";
         string fNumberKey = @"exif:FNumber";
@@ -71,7 +71,7 @@ namespace Lenxif
 
         }
 
-        public void ManualUpdateManualLensInfo(string filePath, string focalLength, string aperture, string brand = null)
+        private void ManualUpdateManualLensInfo(string filePath, string focalLength, string aperture, string brand = null)
         {
             IXmpMeta xmp = ReadXMP(filePath);
             if (HasNoExif(xmp.Properties))
@@ -85,7 +85,7 @@ namespace Lenxif
             }
         }
 
-        public void AutoUpdateManualLensInfo(string filePath)
+        private void AutoUpdateManualLensInfo(string filePath)
         {
             IXmpMeta xmp = ReadXMP(filePath);
 
@@ -189,7 +189,7 @@ namespace Lenxif
             return hasNoExif;
         }
 
-        public IXmpMeta ReadXMP(string filePath)
+        private IXmpMeta ReadXMP(string filePath)
         {
             IXmpMeta xmp;
 
